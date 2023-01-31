@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    public float health;
     [SerializeField] float speed = 6f;
     [SerializeField] float turnSmoothTime = 0.1f;
     CharacterController controller;
     float turnSmoothVelocity;
     float maxHealth = 10f;
-    float health;
 
     // Start is called before the first frame update
     void Start()
@@ -33,6 +33,15 @@ public class Player : MonoBehaviour
             transform.rotation = Quaternion.Euler(0f, angle, 0f);
 
             controller.Move(direction * Time.deltaTime * speed);
+        }
+    }
+
+    public void ChangeHealth(int change)
+    {
+        health += change;
+        if (health < 0)
+        {
+            health = 0;
         }
     }
 }
