@@ -8,11 +8,14 @@ public class Player : MonoBehaviour
     [SerializeField] float turnSmoothTime = 0.1f;
     CharacterController controller;
     float turnSmoothVelocity;
+    float maxHealth = 10f;
+    float health;
 
     // Start is called before the first frame update
     void Start()
     {
         controller = GetComponent<CharacterController>();
+        health = maxHealth;
     }
 
     // Update is called once per frame
