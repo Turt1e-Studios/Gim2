@@ -334,7 +334,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemy: {fileID: 1497270615820653455, guid: 6b9e69cc1321b654babd83db2287cf0b, type: 3}
-  spawnRate: 3
+  spawnRate: 4
 --- !u!4 &809381451
 Transform:
   m_ObjectHideFlags: 0
@@ -481,6 +481,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68dd2cf1e38a2c341a3c4ba0da57ddf9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  health: 0
   speed: 6
   turnSmoothTime: 0.1
 --- !u!1 &1210160425
