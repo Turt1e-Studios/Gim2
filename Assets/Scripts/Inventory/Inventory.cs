@@ -38,7 +38,7 @@ public class Inventory : MonoBehaviour
             }
             items.Add(item);
 
-            UpdateUI();
+            UICallback();
         }
         return true;
     }
@@ -46,10 +46,10 @@ public class Inventory : MonoBehaviour
     public void Remove(Item item)
     {
         items.Remove(item);
-        UpdateUI();
+        UICallback();
     }
 
-    public void UpdateUI()
+    public void UICallback()
     {
         if (onItemChangedCallback != null)
         {
