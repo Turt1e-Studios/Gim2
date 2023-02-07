@@ -44,4 +44,12 @@ public class Player : MonoBehaviour
             health = 0;
         }
     }
+    private void OnCollisionEnter(Collision collision)
+    {
+        Interactable interactable = collision.gameObject.GetComponent<Interactable>();
+        if (interactable != null)
+        {
+            interactable.Touch(transform);
+        }
+    }
 }
