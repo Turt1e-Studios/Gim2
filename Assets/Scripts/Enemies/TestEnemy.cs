@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class TestEnemy : Enemy
 {
+    [SerializeField] int speed = 3;
     GameObject player;
     Player playerScript;
 

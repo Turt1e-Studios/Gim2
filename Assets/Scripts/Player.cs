@@ -50,6 +50,7 @@ public class Player : MonoBehaviour
         {
             health = 0;
         }
+        // game over!
     }
     private void OnCollisionEnter(Collision collision)
     {
