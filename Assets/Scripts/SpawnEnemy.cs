@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SpawnEnemy : MonoBehaviour
 {
-    public GameObject enemy;
+    [SerializeField] List<GameObject> enemies;
     [SerializeField] float spawnRate = 1.0f;
     int range = 10;
 
@@ -20,7 +20,7 @@ public class SpawnEnemy : MonoBehaviour
         {
             yield return new WaitForSeconds(spawnRate);
             Vector3 newPosition = new Vector3(transform.position.x + Random.Range(-range, range), transform.position.y, transform.position.z + Random.Range(-range, range));
-            Instantiate(enemy, newPosition, transform.rotation);
+            Instantiate(enemies[Random.Range(0, enemies.Count)], newPosition, transform.rotation);
         }
     }
 }
