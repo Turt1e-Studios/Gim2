@@ -4,9 +4,15 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    [SerializeField] int speed = 3;
+    
+
+    [SerializeField] int speed = 1;
     GameObject player;
     private Player playerScript;
+    public float enemyLife = 3;
+    
+
+    //public GameObject this;
 
     // Start is called before the first frame update
     void Start()
@@ -27,5 +33,15 @@ public class Enemy : MonoBehaviour
         {
             playerScript.ChangeHealth(-1);
         }
+    }
+
+    public void EnemyHealth(int change)
+    {
+        enemyLife += change;
+        if (enemyLife <= 0)
+        {
+            print("This part works");
+            Destroy(this.gameObject);
+        } 
     }
 }
