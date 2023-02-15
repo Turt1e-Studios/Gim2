@@ -2914,6 +2914,46 @@ PrefabInstance:
       propertyPath: m_Name
       value: dudea
       objectReference: {fileID: 0}
+    - target: {fileID: 4865064391339405807, guid: 864d31dc40044eb479e097b687dd62f1, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -11.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4865064391339405807, guid: 864d31dc40044eb479e097b687dd62f1, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 19.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 4865064391339405807, guid: 864d31dc40044eb479e097b687dd62f1, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -4.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4865064391339405807, guid: 864d31dc40044eb479e097b687dd62f1, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.492149
+      objectReference: {fileID: 0}
+    - target: {fileID: 4865064391339405807, guid: 864d31dc40044eb479e097b687dd62f1, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.43115807
+      objectReference: {fileID: 0}
+    - target: {fileID: 4865064391339405807, guid: 864d31dc40044eb479e097b687dd62f1, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.49723476
+      objectReference: {fileID: 0}
+    - target: {fileID: 4865064391339405807, guid: 864d31dc40044eb479e097b687dd62f1, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.5697804
+      objectReference: {fileID: 0}
+    - target: {fileID: 4865064391339405807, guid: 864d31dc40044eb479e097b687dd62f1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 97.685
+      objectReference: {fileID: 0}
+    - target: {fileID: 4865064391339405807, guid: 864d31dc40044eb479e097b687dd62f1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -180.816
+      objectReference: {fileID: 0}
+    - target: {fileID: 4865064391339405807, guid: 864d31dc40044eb479e097b687dd62f1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 80.925
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 864d31dc40044eb479e097b687dd62f1, type: 3}
 --- !u!1 &1618769592 stripped
@@ -4023,7 +4063,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -6629797300637803691, guid: ebc2a48ae6a1eec40a23a8258fe2f9fa, type: 3}
+  - {fileID: 2100000, guid: 5524c7caa5d280b45bec4a7f79b18178, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4886,7 +4926,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -6922793697723135513, guid: ebc2a48ae6a1eec40a23a8258fe2f9fa, type: 3}
+  - {fileID: 2100000, guid: 331327ea2533b464f8c8b711f95de4ae, type: 2}
   - {fileID: 607464113600301789, guid: ebc2a48ae6a1eec40a23a8258fe2f9fa, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
