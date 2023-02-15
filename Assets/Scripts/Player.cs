@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class Player : MonoBehaviour
 {
@@ -21,7 +22,13 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // move this stuff to FixedUpdate later for better physics
+        // if hovering over UI, exit out before controlling player
+        if (EventSystem.current.IsPointerOverGameObject())
+        {
+            return;
+        }
+
+        // Movement
         float horizontalInput = Input.GetAxisRaw("Horizontal");
         float verticalInput = Input.GetAxisRaw("Vertical");
         Vector3 direction = new Vector3(horizontalInput, 0f, verticalInput).normalized;
@@ -42,6 +49,15 @@ public class Player : MonoBehaviour
         if (health < 0)
         {
             health = 0;
+        }
+        // game over!
+    }
+    private void OnCollisionEnter(Collision collision)
+    {
+        Interactable interactable = collision.gameObject.GetComponent<Interactable>();
+        if (interactable != null)
+        {
+            interactable.Touch(transform);
         }
     }
 }
