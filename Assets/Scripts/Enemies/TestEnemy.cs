@@ -11,7 +11,7 @@ public class TestEnemy : Enemy
     // Start is called before the first frame update
     void Start()
     {
-        player = GameObject.Find("Player");
+        player = GameObject.Find("dudea");
         playerScript = player.GetComponent<Player>();
     }
 
