@@ -20,7 +20,7 @@ public class Enemy : MonoBehaviour
     }
 
     // when shot by player
-    void changeHealth(int change)
+    public void changeHealth(int change)
     {
         health += change;
         if (health <= 0)
