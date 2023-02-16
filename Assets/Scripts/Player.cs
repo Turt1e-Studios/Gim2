@@ -14,11 +14,15 @@ public class Player : MonoBehaviour
     float turnSmoothVelocity;
     float maxHealth = 10f;
 
+    public HealthBar healthBar;
+    public GameOverScreen GameOverScreen;
+
     // Start is called before the first frame update
     void Start()
     {
         controller = GetComponent<CharacterController>();
         health = maxHealth;
+        healthBar.SetMaxHealth((int) maxHealth);
     }
 
     // Update is called once per frame
@@ -63,11 +67,11 @@ public class Player : MonoBehaviour
     public void ChangeHealth(int change)
     {
         health += change;
+        healthBar.SetHealth((int) health);
         if (health < 0)
         {
-            health = 0;
+            GameOver();
         }
-        // game over!
     }
     private void OnCollisionEnter(Collision collision)
     {
@@ -78,6 +82,9 @@ public class Player : MonoBehaviour
         }
     }
 
-    
+    public void GameOver()
+    {
+        GameOverScreen.Setup();
+    }
 }
 
