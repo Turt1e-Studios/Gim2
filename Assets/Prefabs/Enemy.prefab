@@ -98,7 +98,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 1.2, y: 1.2, z: 1.2}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &52349915638545319
 Rigidbody:
@@ -142,5 +142,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf5408e9d4397754aba6aaaabcf19e64, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 1
+  health: 1
+  maxHealth: 1000
   speed: 9
+  enemyLife: 3

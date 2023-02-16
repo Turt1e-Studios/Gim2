@@ -32,17 +32,17 @@ public class TestEnemy : Enemy
     {
         if (collision.gameObject == player)
         {
-            playerScript.ChangeHealth(-1);
+            //playerScript.ChangeHealth(-1);
         }
     }
 
-    public void EnemyHealth(int change)
+    /*public void EnemyHealth(int change)
     {
-        enemyLife += change;
-        if (enemyLife <= 0)
+        health += change;
+        if (health <= 0)
         {
             print("This part works");
             Destroy(this.gameObject);
         } 
-    }
+    }*/
 }

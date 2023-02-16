@@ -22,9 +22,9 @@ public class Bullet : MonoBehaviour
     {
         if (other.gameObject.tag == "enemy")
         {
-            //enemyHealth.EnemyHealth(-1);
+           
             other.GetComponent<Enemy>().changeHealth(-1);
-            //enemy.EnemyHealth(-1);
+ 
             Destroy(otherBullet);
            
             
