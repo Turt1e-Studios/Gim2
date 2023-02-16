@@ -32,7 +32,7 @@ public class TestEnemy : Enemy
     {
         if (collision.gameObject == player)
         {
-            //playerScript.ChangeHealth(-1);
+            playerScript.ChangeHealth(-1);
         }
     }
 
