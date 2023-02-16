@@ -15,13 +15,19 @@ public class ItemPickup : Interactable
 
     void PickUp()
     {
+      
+            Debug.Log("Picking up " + item.name);
+            bool wasPickedUp = Inventory.instance.Add(item);
+            if (wasPickedUp) Destroy(gameObject);
+        
+
         if (gameObject.tag == "enemy")
         {
-            return;
+            //return;
         }
-
-        Debug.Log("Picking up " + item.name);
-        bool wasPickedUp = Inventory.instance.Add(item);
-        if (wasPickedUp) Destroy(gameObject);
+        
+        
     }
+
+    
 }

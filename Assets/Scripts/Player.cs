@@ -5,6 +5,7 @@ using UnityEngine.EventSystems;
 
 public class Player : MonoBehaviour
 {
+    public Item item;
     public float gravity;
     public float health;
     [SerializeField] float speed = 6f;
@@ -76,4 +77,7 @@ public class Player : MonoBehaviour
             interactable.Touch(transform);
         }
     }
+
+    
 }
+

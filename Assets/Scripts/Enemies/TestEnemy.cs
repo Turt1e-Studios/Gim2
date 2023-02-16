@@ -20,12 +20,16 @@ public class TestEnemy : Enemy
     {
         player = GameObject.Find("dudea");
         playerScript = player.GetComponent<Player>();
+       
+
+       
     }
 
     // Update is called once per frame
     void Update()
     {
-        transform.position = Vector3.MoveTowards(transform.position, player.transform.position, speed * Time.deltaTime);
+
+        transform.position = Vector3.MoveTowards(transform.position, player.transform.position , speed * Time.deltaTime);
     }
 
     void OnCollisionEnter(Collision collision)
