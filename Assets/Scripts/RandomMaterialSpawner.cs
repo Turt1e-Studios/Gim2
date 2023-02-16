@@ -23,8 +23,6 @@ public class RandomMaterialSpawner : MonoBehaviour
             
         }
 
-        
-
        
     }
 
