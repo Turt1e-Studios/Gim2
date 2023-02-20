@@ -7,7 +7,7 @@ public class TestEnemy : Enemy
     
 
     [SerializeField] int speed = 1;
-    GameObject player;
+    [SerializeField] GameObject player;
     
     private Player playerScript;
     public float enemyLife = 3;
@@ -18,11 +18,8 @@ public class TestEnemy : Enemy
     // Start is called before the first frame update
     void Start()
     {
-        player = GameObject.Find("dudea");
+        player = GameObject.Find("Player");
         playerScript = player.GetComponent<Player>();
-       
-
-       
     }
 
     // Update is called once per frame
