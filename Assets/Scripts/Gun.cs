@@ -4,17 +4,15 @@ using UnityEngine;
 
 public class Gun : MonoBehaviour
 {
-    public Transform firePoint;
-    public GameObject bulletPrefab;
-    public float cooldown;
+    // When the enemies are close so the meshes collide with the Player, it gets buggy. Other than that, it seems to be working.
+
+    // Starts with a cooldown
+    [SerializeField] Transform firePoint;
+    [SerializeField] GameObject bulletPrefab;
+    [SerializeField] float cooldown = 0;
+    [SerializeField] float speed = 10;
     float lastShot;
-    public float speed = 10;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
+    
 
     // Update is called once per frame
     void Update()
@@ -23,16 +21,15 @@ public class Gun : MonoBehaviour
         {
             Shoot();
         }
-
     }
 
     void Shoot()
     {
-        /*if (Time.time - lastShot < cooldown)
+        if (Time.time - lastShot < cooldown)
         {
             return;
         }
-        lastShot = Time.time;*/
+        lastShot = Time.time;
         var bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
         bullet.GetComponent<Rigidbody>().velocity = firePoint.forward * speed; 
     }

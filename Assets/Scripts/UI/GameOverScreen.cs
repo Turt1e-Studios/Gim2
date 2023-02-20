@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 
 public class GameOverScreen : MonoBehaviour
 {
-    public GameObject healthBar;
+    [SerializeField] GameObject healthBar;
 
     public void Setup()
     {

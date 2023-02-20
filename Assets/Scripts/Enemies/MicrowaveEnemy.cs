@@ -12,6 +12,7 @@ public class MicrowaveEnemy : Enemy
     // Start is called before the first frame update
     void Start()
     {
+        health = maxHealth;
         direction = Random.insideUnitSphere;
     }
 

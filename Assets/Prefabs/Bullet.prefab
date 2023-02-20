@@ -127,5 +127,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 117ca84af15745a41bcc08e5df1333fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyHealth: {fileID: 935118274836367808, guid: 6b9e69cc1321b654babd83db2287cf0b, type: 3}
-  otherBullet: {fileID: 4618758204917378040}
+  damage: 1

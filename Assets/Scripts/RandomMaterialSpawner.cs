@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class RandomMaterialSpawner : MonoBehaviour
 {
+    // not going to mess with this since it isn't working yet
     public GameObject matV1;
    
     public int r;

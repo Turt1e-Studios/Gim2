@@ -4,31 +4,25 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    public int health = 5;
     [SerializeField] protected int maxHealth;
-    //protected int health;
+    protected int health;
 
-    // to be overriden in each enemy scripts
+    // to be overriden in each enemy scripts. For example, if an enemy explodes when it dies.
     protected virtual void OnDeath()
     {
         
     }
 
-    // Start is called before the first frame update
-    void Start()
+    // Changes the health of the enemy, and is destroyed upon death.
+    public void ChangeHealth(int change)
     {
-       // health = maxHealth;
-    }
-
-    // when shot by player
-    public void changeHealth(int change)
-    {
+        Debug.Log(health);
         health += change;
-        if (health < 0)
+        if (health <= 0)
         {
-            //OnDeath();
+            OnDeath();
             print("health: " + health);
-            Destroy(this.gameObject);
+            Destroy(gameObject);
         }
     }
 }

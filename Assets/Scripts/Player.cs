@@ -5,17 +5,19 @@ using UnityEngine.EventSystems;
 
 public class Player : MonoBehaviour
 {
-    public Item item;
-    public float gravity;
-    public float health;
+    // ik this is a lot of [SerializeField]s lol
+    [SerializeField] HealthBar healthBar;
+    [SerializeField] GameOverScreen GameOverScreen;
+    [SerializeField] Item item;
+    [SerializeField] float gravity;
+    [SerializeField] float health;
     [SerializeField] float speed = 6f;
     [SerializeField] float turnSmoothTime = 0.1f;
     CharacterController controller;
     float turnSmoothVelocity;
     float maxHealth = 10f;
 
-    public HealthBar healthBar;
-    public GameOverScreen GameOverScreen;
+    
 
     // Start is called before the first frame update
     void Start()
@@ -28,6 +30,12 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // if hovering over UI, exit out before controlling player
+        if (EventSystem.current.IsPointerOverGameObject())
+        {
+            return;
+        }
+
         if (controller.isGrounded)
         {
             gravity = 0;
@@ -40,11 +48,7 @@ public class Player : MonoBehaviour
         {
             gravity = -9;
         }
-        // if hovering over UI, exit out before controlling player
-        if (EventSystem.current.IsPointerOverGameObject())
-        {
-            return;
-        }
+        
 
         // Movement
         

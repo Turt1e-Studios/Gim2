@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class InventoryUI : MonoBehaviour
 {
-    public Transform itemsParent;
-    public GameObject inventoryUI;
+    [SerializeField] Transform itemsParent;
+    [SerializeField] GameObject inventoryUI;
 
     Inventory inventory;
 

@@ -20,6 +20,7 @@ public class Inventory : MonoBehaviour
     #endregion
 
     // apparently calls methods attached when event happens or something
+    // I think these variables might need to be public
     public delegate void OnItemChanged();
     public OnItemChanged onItemChangedCallback;
 

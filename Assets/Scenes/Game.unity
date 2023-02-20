@@ -4078,6 +4078,10 @@ PrefabInstance:
       propertyPath: GameOverScreen
       value: 
       objectReference: {fileID: 9156611396830240958}
+    - target: {fileID: 2874314365631123270, guid: 3694e5f90abee254898b48c43c08272a, type: 3}
+      propertyPath: cooldown
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 3108315515717939741, guid: 3694e5f90abee254898b48c43c08272a, type: 3}
       propertyPath: m_Name
       value: Player

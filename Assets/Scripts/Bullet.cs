@@ -4,33 +4,16 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-     
-    public int damage;
-    //public Enemy enemyHealth;
-    public GameObject otherBullet;
-    
-    void Start()
-    {
-        //GameObject theEnemy = GameObject.Find("Enemy.prefab");
-        //enemyHealth = theEnemy.GetComponent<Enemy>();
-       // enemy = GetComponent<Enemy>();
-        //enemyHealth =GetComponent<Enemy>();
-        
-        
-    }
+    // Note: SerializeField just means that the variable is editable in the Unity Inspector but not in other classes to prevent code accessing places that it shouldn't.
+    // That means that you change the damage in the Prefab itself in the script component.
+    [SerializeField] int damage;
+
     void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "enemy")
         {
-           
-            other.GetComponent<Enemy>().changeHealth(-1);
- 
-            Destroy(otherBullet);
-           
-            
-            
+            other.GetComponent<Enemy>().ChangeHealth(-damage);
+            Destroy(gameObject);
         }
-
     }
-
 }
