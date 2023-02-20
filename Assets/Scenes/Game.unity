@@ -578,7 +578,7 @@ Camera:
     height: 1
   near clip plane: 0.1
   far clip plane: 5000
-  field of view: 40
+  field of view: 90
   orthographic: 0
   orthographic size: 10
   m_Depth: -1
@@ -624,7 +624,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1618769595}
-  offset: {x: 0, y: 10, z: -20}
+  offset: {x: 0, y: 5, z: -5}
 --- !u!114 &308044032
 MonoBehaviour:
   m_ObjectHideFlags: 0
