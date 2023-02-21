@@ -694,7 +694,7 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 0.1
+  near clip plane: 0.01
   far clip plane: 5000
   field of view: 90
   orthographic: 0
@@ -721,7 +721,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 308044027}
-  m_LocalRotation: {x: 0.072813705, y: 0.000000034321417, z: -0.000000002505721, w: 0.9973456}
+  m_LocalRotation: {x: 0.072813705, y: -0.000000034321417, z: 0.000000002505721, w: 0.9973456}
   m_LocalPosition: {x: 0, y: 3.32, z: -5.27}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -2322,7 +2322,7 @@ MonoBehaviour:
   m_Lens:
     FieldOfView: 90
     OrthographicSize: 10
-    NearClipPlane: 0.1
+    NearClipPlane: 0.01
     FarClipPlane: 5000
     Dutch: 0
     ModeOverride: 0
@@ -2344,7 +2344,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1014051159}
-  m_LocalRotation: {x: 0.072813705, y: 0.000000017160708, z: -0.0000000012528603, w: 0.99734557}
+  m_LocalRotation: {x: 0.072813705, y: -0.000000017160708, z: 0.0000000012528603, w: 0.99734557}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -3341,7 +3341,7 @@ MonoBehaviour:
   m_Lens:
     FieldOfView: 90
     OrthographicSize: 10
-    NearClipPlane: 0.1
+    NearClipPlane: 0.01
     FarClipPlane: 5000
     Dutch: 0
     ModeOverride: 0
@@ -3363,7 +3363,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1464751836}
-  m_LocalRotation: {x: 0.122404784, y: -0.000000017382813, z: 0.0000000021438609, w: 0.9924803}
+  m_LocalRotation: {x: 0.12240479, y: -0.000000016473415, z: 0.0000000020317026, w: 0.9924803}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -3877,7 +3877,7 @@ MonoBehaviour:
   m_Lens:
     FieldOfView: 90
     OrthographicSize: 10
-    NearClipPlane: 0.1
+    NearClipPlane: 0.01
     FarClipPlane: 5000
     Dutch: 0
     ModeOverride: 0
@@ -4114,6 +4114,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2024950159}
   - component: {fileID: 2024950158}
+  - component: {fileID: 2024950160}
   m_Layer: 0
   m_Name: Third Person Camera
   m_TagString: Untagged
@@ -4145,7 +4146,7 @@ MonoBehaviour:
   m_Lens:
     FieldOfView: 90
     OrthographicSize: 10
-    NearClipPlane: 0.1
+    NearClipPlane: 0.01
     FarClipPlane: 5000
     Dutch: 0
     ModeOverride: 0
@@ -4243,6 +4244,36 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2024950160
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2024950157}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e501d18bb52cf8c40b1853ca4904654f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_CollideAgainst:
+    serializedVersion: 2
+    m_Bits: 128
+  m_IgnoreTag: Player
+  m_TransparentLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_MinimumDistanceFromTarget: 0.1
+  m_AvoidObstacles: 1
+  m_DistanceLimit: 0
+  m_MinimumOcclusionTime: 0
+  m_CameraRadius: 0.1
+  m_Strategy: 0
+  m_MaximumEffort: 4
+  m_SmoothingTime: 0
+  m_Damping: 0.6
+  m_DampingWhenOccluded: 0.6
+  m_OptimalTargetDistance: 0
 --- !u!1001 &2134861527
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4357,7 +4388,7 @@ GameObject:
   - component: {fileID: 4356012026976086421}
   - component: {fileID: 220048889623533585}
   - component: {fileID: 8622353167155655926}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Plane.006
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4376,7 +4407,7 @@ GameObject:
   - component: {fileID: 4438501007058238842}
   - component: {fileID: 4636069369385586640}
   - component: {fileID: 4636069369385586642}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Icosphere.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4437,7 +4468,7 @@ GameObject:
   - component: {fileID: 2943081937887943399}
   - component: {fileID: 2786534776231176831}
   - component: {fileID: 3612539099069629781}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Plane.003
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4564,7 +4595,7 @@ GameObject:
   - component: {fileID: 5334037118675911128}
   - component: {fileID: 4539702729038191879}
   - component: {fileID: 5334037118675911130}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4691,7 +4722,7 @@ GameObject:
   - component: {fileID: 8897240365860803442}
   - component: {fileID: 3129779574424759182}
   - component: {fileID: 8897240365860803444}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Cube.004
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4748,7 +4779,7 @@ GameObject:
   - component: {fileID: 8482381506121329891}
   - component: {fileID: 8418640413645120182}
   - component: {fileID: 8482381506121329893}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Cube.003
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4767,7 +4798,7 @@ GameObject:
   - component: {fileID: 4876933052773193215}
   - component: {fileID: 1305037034819283218}
   - component: {fileID: 4931218027453411326}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Plane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4954,6 +4985,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3108315515717939741, guid: 3694e5f90abee254898b48c43c08272a, type: 3}
       propertyPath: m_Name
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 3108315515717939741, guid: 3694e5f90abee254898b48c43c08272a, type: 3}
+      propertyPath: m_TagString
       value: Player
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -5482,7 +5517,7 @@ GameObject:
   - component: {fileID: 2342156430806241537}
   - component: {fileID: 6652253183571743418}
   - component: {fileID: 6652253183571743420}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Icosphere
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5639,7 +5674,7 @@ GameObject:
   - component: {fileID: 4321851931819324314}
   - component: {fileID: 2199397641204168232}
   - component: {fileID: 5811517546115106397}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Plane.004
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5807,7 +5842,7 @@ GameObject:
   - component: {fileID: 6697621764565244826}
   - component: {fileID: 882129739127313549}
   - component: {fileID: 6697621764565244828}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Plane.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6081,7 +6116,7 @@ GameObject:
   - component: {fileID: 3399627852994883595}
   - component: {fileID: 5509654438316923769}
   - component: {fileID: 6443852218459635703}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Icosphere.002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6114,7 +6149,7 @@ GameObject:
   - component: {fileID: 508709923327191727}
   - component: {fileID: 7339356833108674284}
   - component: {fileID: 7685259906818380093}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Plane.002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6355,7 +6390,7 @@ GameObject:
   - component: {fileID: 8401952776358681226}
   - component: {fileID: 7416691523055944315}
   - component: {fileID: 8401952776358681228}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Cube.005
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6446,7 +6481,7 @@ GameObject:
   - component: {fileID: 1542950379490156920}
   - component: {fileID: 5684302422114173507}
   - component: {fileID: 7813055665964406261}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Icosphere.005
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6537,7 +6572,7 @@ GameObject:
   - component: {fileID: 763392350384093439}
   - component: {fileID: 8981784598397152648}
   - component: {fileID: 8981784598397152650}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Plane.005
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6586,7 +6621,7 @@ GameObject:
   - component: {fileID: 3010172808334435352}
   - component: {fileID: 8544783547044654085}
   - component: {fileID: 8544783547044654087}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Cube.002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6727,7 +6762,7 @@ GameObject:
   - component: {fileID: 8297442147148360974}
   - component: {fileID: 5268142631922806496}
   - component: {fileID: 8582293573359433142}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Icosphere.003
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6804,7 +6839,7 @@ GameObject:
   - component: {fileID: 3260616447542276168}
   - component: {fileID: 7762067043716573657}
   - component: {fileID: 8707273951864638426}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Cube.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6837,7 +6872,7 @@ GameObject:
   - component: {fileID: 8894691111909569738}
   - component: {fileID: 6745302440269728775}
   - component: {fileID: 8894691111909569740}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Cube.006
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6900,7 +6935,7 @@ GameObject:
   - component: {fileID: 467713618226642526}
   - component: {fileID: 776046732947834170}
   - component: {fileID: 8981510429460698417}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Icosphere.004
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6989,7 +7024,7 @@ GameObject:
   - component: {fileID: 1703912660167000353}
   - component: {fileID: 8102382927216104563}
   - component: {fileID: 9014776603775838301}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Cube.007
   m_TagString: Untagged
   m_Icon: {fileID: 0}

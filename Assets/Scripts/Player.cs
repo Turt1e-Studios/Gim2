@@ -44,9 +44,6 @@ public class Player : MonoBehaviour
         if (controller.isGrounded)
         {
             gravity = 0;
-            //print("It's grounded");
-            //Vector3 move = new Vector3(0, -1, 0);
-            //gameObject.transform.position += move;
         }
 
         else
@@ -59,7 +56,7 @@ public class Player : MonoBehaviour
         
         float horizontalInput = Input.GetAxisRaw("Horizontal");
         float verticalInput = Input.GetAxisRaw("Vertical");
-        Vector3 direction = new Vector3(horizontalInput, gravity, verticalInput).normalized;
+        Vector3 direction = new Vector3(horizontalInput, 0f, verticalInput).normalized;
         
         if (direction.magnitude >= 0.1f)
         {
@@ -67,7 +64,8 @@ public class Player : MonoBehaviour
             float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref turnSmoothVelocity, turnSmoothTime);
             transform.rotation = Quaternion.Euler(0f, angle, 0f);
 
-            Vector3 moveDir = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward;
+            Vector3 moveDir = Quaternion.Euler(0f, targetAngle + gravity, 0f) * Vector3.forward;
+            moveDir += Physics.gravity;
             controller.Move(moveDir * Time.deltaTime * speed);
         }
     }
@@ -92,6 +90,8 @@ public class Player : MonoBehaviour
 
     public void GameOver()
     {
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
         GameOverScreen.Setup();
     }
 }
