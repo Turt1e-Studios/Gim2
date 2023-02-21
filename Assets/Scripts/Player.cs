@@ -10,16 +10,16 @@ public class Player : MonoBehaviour
     [SerializeField] GameOverScreen GameOverScreen;
     [SerializeField] Item item;
     [SerializeField] Transform cam;
-    [SerializeField] float gravity;
+    [SerializeField] float gravity = -9.8f;
     [SerializeField] int maxHealth = 10;
     [SerializeField] float speed = 6f;
     [SerializeField] float turnSmoothTime = 0.1f;
+    [SerializeField] float jumpHeight = 3f;
     
     CharacterController controller;
+    Vector3 velocity;
     float turnSmoothVelocity;
     int health;
-
-    
 
     // Start is called before the first frame update
     void Start()
@@ -41,19 +41,16 @@ public class Player : MonoBehaviour
             return;
         }
 
-        if (controller.isGrounded)
-        {
-            gravity = 0;
-        }
-
-        else
-        {
-            gravity = -9.8f;
-        }
-        
-
         // Movement
+
+        // reset y velocity if grounded
+        if (controller.isGrounded && velocity.y < 0)
+        {
+            velocity.y = 0f;
+        }
+
         
+        // moving and turning
         float horizontalInput = Input.GetAxisRaw("Horizontal");
         float verticalInput = Input.GetAxisRaw("Vertical");
         Vector3 direction = new Vector3(horizontalInput, 0f, verticalInput).normalized;
@@ -65,9 +62,17 @@ public class Player : MonoBehaviour
             transform.rotation = Quaternion.Euler(0f, angle, 0f);
 
             Vector3 moveDir = Quaternion.Euler(0f, targetAngle + gravity, 0f) * Vector3.forward;
-            moveDir += Physics.gravity;
+
             controller.Move(moveDir * Time.deltaTime * speed);
         }
+        
+        // jumping and gravity (from Brackeys first person movement tutorial)
+        if (Input.GetButtonDown("Jump") && controller.isGrounded)
+        {
+            velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
+        }
+        velocity.y += gravity * Time.deltaTime;
+        controller.Move(velocity * Time.deltaTime);
     }
 
     public void ChangeHealth(int change)
