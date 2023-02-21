@@ -10,12 +10,13 @@ public class Player : MonoBehaviour
     [SerializeField] GameOverScreen GameOverScreen;
     [SerializeField] Item item;
     [SerializeField] float gravity;
-    [SerializeField] float health;
+    [SerializeField] int maxHealth = 10;
     [SerializeField] float speed = 6f;
     [SerializeField] float turnSmoothTime = 0.1f;
+    
     CharacterController controller;
     float turnSmoothVelocity;
-    float maxHealth = 10f;
+    int health;
 
     
 
@@ -24,7 +25,7 @@ public class Player : MonoBehaviour
     {
         controller = GetComponent<CharacterController>();
         health = maxHealth;
-        healthBar.SetMaxHealth((int) maxHealth);
+        healthBar.SetMaxHealth(maxHealth);
     }
 
     // Update is called once per frame
@@ -46,7 +47,7 @@ public class Player : MonoBehaviour
 
         else
         {
-            gravity = -9;
+            gravity = -9.8f;
         }
         
 
@@ -64,14 +65,12 @@ public class Player : MonoBehaviour
 
             controller.Move(direction * Time.deltaTime * speed);
         }
-        
-        
     }
 
     public void ChangeHealth(int change)
     {
         health += change;
-        healthBar.SetHealth((int) health);
+        healthBar.SetHealth(health);
         if (health < 0)
         {
             GameOver();
