@@ -10,6 +10,7 @@ public class Player : MonoBehaviour
     [SerializeField] GameOverScreen GameOverScreen;
     [SerializeField] Item item;
     [SerializeField] Transform cam;
+    [SerializeField] Animator anim;
     [SerializeField] float gravity = -9.8f;
     [SerializeField] int maxHealth = 10;
     [SerializeField] float speed = 6f;
@@ -64,6 +65,7 @@ public class Player : MonoBehaviour
             Vector3 moveDir = Quaternion.Euler(0f, targetAngle + gravity, 0f) * Vector3.forward;
 
             controller.Move(moveDir * Time.deltaTime * speed);
+            anim.SetTrigger("Walking");
         }
         
         // jumping and gravity (from Brackeys first person movement tutorial)
