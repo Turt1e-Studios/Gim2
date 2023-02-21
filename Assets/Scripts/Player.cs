@@ -45,7 +45,7 @@ public class Player : MonoBehaviour
         // Movement
 
         // reset y velocity if grounded
-        if (controller.isGrounded && velocity.y < 0)
+        if (controller.isGrounded && velocity.y < 0.3f)
         {
             velocity.y = 0f;
         }
