@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,28 +10,35 @@ public class Gun : MonoBehaviour
     // Starts with a cooldown
     [SerializeField] Transform firePoint;
     [SerializeField] GameObject bulletPrefab;
-    [SerializeField] float cooldown = 0;
+    [SerializeField] float cooldown;
     [SerializeField] float speed = 10;
-    float lastShot;
-    
+    private float lastShot;
+    private Player playerScript;
+
+    private void Start()
+    {
+        playerScript = GameObject.Find("Player").GetComponent<Player>();
+    }
 
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
         if (Input.GetMouseButtonDown(0))
         {
-            Shoot();
+            //Shoot();
         }
+
+        // playerScript.fightingAction = Shoot;
     }
 
-    void Shoot()
+    private void Shoot()
     {
         if (Time.time - lastShot < cooldown)
         {
             return;
         }
         lastShot = Time.time;
-        var bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+        GameObject bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
         bullet.GetComponent<Rigidbody>().velocity = firePoint.forward * speed; 
     }
 }
