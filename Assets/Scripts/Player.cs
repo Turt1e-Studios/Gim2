@@ -2,6 +2,7 @@ using System;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
+// Player: movement & health
 public class Player : MonoBehaviour
 {
     public Action fightingAction;
@@ -126,7 +127,7 @@ public class Player : MonoBehaviour
         anim.SetTrigger(Walking);
     }
 
-    // Adds gravity and allows the player to jump
+    // Adds gravity and allows the player to jump. Maybe separate into 2 different methods.
     private void VerticalMovement()
     {
         // jumping and gravity (from Brackeys first person movement tutorial)
