@@ -26,7 +26,10 @@ public class Player : MonoBehaviour
     [SerializeField] private float speed = 6f;
     [SerializeField] private float turnSmoothTime = 0.1f;
     [SerializeField] private float jumpHeight = 3f;
-
+    [Header("Ground Check")]
+    [SerializeField] private LayerMask groundMask;
+    [SerializeField] private Transform groundCheck;
+    [SerializeField] private float groundDistance = 0.4f; // radius to check if grounded
     [Header("Combat Variables")] 
     [SerializeField] private float kickStrength = 1f;
     [SerializeField] private float kickRange = 5f;
@@ -36,6 +39,7 @@ public class Player : MonoBehaviour
     private Vector3 velocity;
     private float turnSmoothVelocity;
     private int health;
+    private bool _isGrounded;
     
     // Public method, allows other classes to change the player's health.
     public void ChangeHealth(int change)
@@ -74,7 +78,7 @@ public class Player : MonoBehaviour
         }
 
         // Movement
-        ResetYVelocity();
+        CheckIfGrounded();
         RegularMovement();
         VerticalMovement();
         
@@ -98,12 +102,13 @@ public class Player : MonoBehaviour
         }
     }
 
-    private void ResetYVelocity()
+    private void CheckIfGrounded()
     {
-        // reset y velocity if grounded
-        if (controller.isGrounded)
+        // Check if player is grounded from creating sphere from groundCheck, then reset velocity
+        _isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
+        if (_isGrounded && velocity.y < 0)
         {
-            velocity.y = 0f;
+            velocity.y = -2f; // Buffer number to force player onto the ground (theoretically 0)
         }
     }
 
@@ -131,7 +136,7 @@ public class Player : MonoBehaviour
     private void VerticalMovement()
     {
         // jumping and gravity (from Brackeys first person movement tutorial)
-        if (Input.GetButtonDown("Jump") && controller.isGrounded)
+        if (Input.GetButtonDown("Jump") && _isGrounded)
         {
             velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
         }
