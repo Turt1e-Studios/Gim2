@@ -20,7 +20,7 @@ public class Player : MonoBehaviour
     [Header("UI References")]
     [SerializeField] private HealthBar healthBar;
     [SerializeField] private GameOverScreen gameOverScreen;
-    [SerializeField] private Item item;
+    // [SerializeField] private Item item; Probably unnecessary but commented out just in case
     [SerializeField] private Transform cam;
     [SerializeField] private Animator anim;
     [Header("Movement Variables")]
