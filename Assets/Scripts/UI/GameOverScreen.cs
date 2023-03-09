@@ -1,9 +1,11 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+// Controls UI and button function of the Game Over screen
+
 public class GameOverScreen : MonoBehaviour
 {
-    [SerializeField] GameObject healthBar;
+    [SerializeField] private GameObject healthBar;
 
     public void Setup()
     {

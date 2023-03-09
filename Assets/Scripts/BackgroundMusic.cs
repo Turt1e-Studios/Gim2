@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class BackgroundMusic : MonoBehaviour
@@ -20,10 +18,10 @@ public class BackgroundMusic : MonoBehaviour
     //    DontDestroyOnLoad(gameObject);
     //}
 
-    // loads the volume according to settings
+    // supposed to save volume and load it throughout scenes but i don't think it really works
 
     private void Awake()
     {
-        GetComponent<AudioSource>().volume = Settings.Instance.volume;
+        GetComponent<AudioSource>().volume = Settings.Instance.Volume;
     }
 }

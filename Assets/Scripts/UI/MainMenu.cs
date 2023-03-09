@@ -1,16 +1,16 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+// Button functionality in main menu ( + background music?) maybe should make that into another script
+
 public class MainMenu : MonoBehaviour
 {
-    [SerializeField] AudioSource backgroundMusic;
+    [SerializeField] private AudioSource backgroundMusic;
 
     public void PlayGame()
     {
         // sets the setting of music volume when leaving the main menu
-        Settings.Instance.volume = backgroundMusic.volume;
+        Settings.Instance.Volume = backgroundMusic.volume;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 

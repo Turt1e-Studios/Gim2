@@ -1,6 +1,7 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+
+// This class stores Items in an inventory system
 
 public class Inventory : MonoBehaviour
 {
@@ -30,17 +31,15 @@ public class Inventory : MonoBehaviour
 
     public bool Add(Item item)
     {
-        if (!item.isDefaultItem)
+        if (item.isDefaultItem) return true;
+        if (items.Count >= space)
         {
-            if (items.Count >= space)
-            {
-                Debug.Log("Not enough room in Inventory.");
-                return false;
-            }
-            items.Add(item);
-
-            UICallback();
+            Debug.Log("Not enough room in Inventory.");
+            return false;
         }
+        items.Add(item);
+
+        UICallback();
         return true;
     }
 
@@ -50,11 +49,8 @@ public class Inventory : MonoBehaviour
         UICallback();
     }
 
-    public void UICallback()
+    private void UICallback()
     {
-        if (onItemChangedCallback != null)
-        {
-            onItemChangedCallback.Invoke();
-        }
+        onItemChangedCallback?.Invoke();
     }
 }

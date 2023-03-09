@@ -1,5 +1,7 @@
 using UnityEngine;
 
+// "Box" placeholder enemy
+
 public class TestEnemy : Enemy
 {
     // Note to whoever's editing this code: you don't need to add a health variable here because this class inherits from Enemy which already has health functionality.
@@ -48,8 +50,9 @@ public class TestEnemy : Enemy
     private void GetKicked(object sender, Player.KickEventArgs kickEventArgs)
     {
         if (Vector3.Distance(transform.position, player.transform.position) > kickEventArgs.kickRange) return;
-        
+    
         Vector3 forceDirection = (transform.position  - player.transform.position).normalized;
         testEnemyRb.AddForce (forceDirection * kickEventArgs.kickStrength, ForceMode.Impulse);
     }
 }
+

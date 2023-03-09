@@ -2,7 +2,10 @@ using System;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-// Player: movement & health
+/*
+ * Player script controlling movement & health. Should break this up into multiple parts later to make it more organized.
+ */
+
 public class Player : MonoBehaviour
 {
     public Action fightingAction;

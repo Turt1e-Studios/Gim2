@@ -1,6 +1,8 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+
+/*
+ * My attempt to make a settings system, probably a complete fail
+ */
 
 public class Settings : MonoBehaviour
 {
@@ -19,9 +21,9 @@ public class Settings : MonoBehaviour
         Instance = this;
         DontDestroyOnLoad(gameObject);
 
-        volume = defaultVolume;
+        Volume = defaultVolume;
     }
 
-    [SerializeField] float defaultVolume;
-    public float volume { get; set; }
+    [SerializeField] private float defaultVolume;
+    public float Volume { get; set; }
 }
