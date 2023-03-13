@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 // "Box" placeholder enemy
@@ -9,6 +10,7 @@ public class TestEnemy : Enemy
     [SerializeField] private float distanceFromPlayer = 5f;
     private GameObject player;
     private Player playerScript;
+    private PlayerHealth playerHealthScript;
     private Rigidbody testEnemyRb;
 
     private void Awake()
@@ -30,7 +32,7 @@ public class TestEnemy : Enemy
     {
         if (collision.gameObject == player)
         {
-            playerScript.ChangeHealth(-1);
+            playerHealthScript.ChangeHealth(-1);
         }
     }
 
@@ -38,6 +40,7 @@ public class TestEnemy : Enemy
     {
         player = GameObject.Find("Player");
         playerScript = player.GetComponent<Player>();
+        playerHealthScript = player.GetComponent<PlayerHealth>();
         playerScript.OnKick += GetKicked;
     }
 
