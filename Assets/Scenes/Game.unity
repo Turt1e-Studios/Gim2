@@ -626,6 +626,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63477d019b2e1e242b947ffdca499a7a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  audioSource: {fileID: 180109277}
+  defaultVolume: 0.5
 --- !u!1 &215861160
 GameObject:
   m_ObjectHideFlags: 0
@@ -871,7 +873,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 308044027}
-  m_LocalRotation: {x: 0.0937392, y: 0.00000002997858, z: -0.0000000028225964, w: 0.9955968}
+  m_LocalRotation: {x: 0.0937392, y: -0.00000002997858, z: 0.0000000028225964, w: 0.9955968}
   m_LocalPosition: {x: 0, y: 3.32, z: -5.27}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1931,7 +1933,7 @@ MonoBehaviour:
   - {fileID: 1497270615820653455, guid: 6b9e69cc1321b654babd83db2287cf0b, type: 3}
   - {fileID: 2776881898718340821, guid: 01a605d393420d94f8ffc5922f5717be, type: 3}
   initialSpawnRate: 3
-  timeBeforeMaximumSpawnRate: 60
+  spawnRateChange: 0.05
   range: 10
 --- !u!4 &809381451
 Transform:
@@ -2385,7 +2387,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1014051159}
-  m_LocalRotation: {x: 0.09373919, y: 0.0000000042826556, z: -4.032282e-10, w: 0.9955968}
+  m_LocalRotation: {x: 0.09373919, y: -0.000000004282654, z: 4.0322803e-10, w: 0.9955968}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -3435,7 +3437,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1464751836}
-  m_LocalRotation: {x: 0.122404814, y: 0.000000019976937, z: -0.0000000024638005, w: 0.9924803}
+  m_LocalRotation: {x: 0.12240479, y: -0.000000016473418, z: 0.000000002031703, w: 0.9924803}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0

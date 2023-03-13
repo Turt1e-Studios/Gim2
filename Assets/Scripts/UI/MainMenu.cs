@@ -10,7 +10,7 @@ public class MainMenu : MonoBehaviour
     public void PlayGame()
     {
         // sets the setting of music volume when leaving the main menu
-        Settings.Instance.Volume = backgroundMusic.volume;
+        PlayerPrefs.SetFloat("Volume", backgroundMusic.volume);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
