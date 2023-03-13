@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 
 /*
- * 
+ * To be implemented
  */
 public class DetectCollisions : MonoBehaviour
 {

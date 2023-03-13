@@ -1,5 +1,9 @@
 using UnityEngine;
 
+/*
+ * Set the volume of the background music
+ */
+
 public class BackgroundMusic : MonoBehaviour
 {
     [SerializeField] private AudioSource audioSource;
