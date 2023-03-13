@@ -1930,7 +1930,9 @@ MonoBehaviour:
   - {fileID: 1497270615820653455, guid: 6b9e69cc1321b654babd83db2287cf0b, type: 3}
   - {fileID: 1497270615820653455, guid: 6b9e69cc1321b654babd83db2287cf0b, type: 3}
   - {fileID: 2776881898718340821, guid: 01a605d393420d94f8ffc5922f5717be, type: 3}
-  spawnRate: 2
+  initialSpawnRate: 3
+  timeBeforeMaximumSpawnRate: 60
+  range: 10
 --- !u!4 &809381451
 Transform:
   m_ObjectHideFlags: 0
@@ -3984,7 +3986,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1877417316}
-  m_LocalRotation: {x: 0.06518583, y: -0.000000017698211, z: 0.0000000011561315, w: 0.9978732}
+  m_LocalRotation: {x: 0.06518583, y: 0.000000017698211, z: -0.0000000011561315, w: 0.9978732}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
