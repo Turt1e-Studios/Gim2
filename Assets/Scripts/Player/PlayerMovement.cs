@@ -12,6 +12,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float speed = 6f;
     [SerializeField] private float turnSmoothTime = 0.1f;
     [SerializeField] private float jumpHeight = 3f;
+    [SerializeField] private float sprintingMultiplier = 1.5f;
     [Header("Movement Animation")]
     [SerializeField] private Transform cam;
     [SerializeField] private Animator anim;
@@ -60,6 +61,12 @@ public class PlayerMovement : MonoBehaviour
         transform.rotation = Quaternion.Euler(0f, angle, 0f);
 
         Vector3 moveDir = Quaternion.Euler(0f, targetAngle + gravity, 0f) * Vector3.forward;
+        
+        // Sprinting
+        if (Input.GetKey(KeyCode.LeftShift))
+        {
+            moveDir *= sprintingMultiplier;
+        }
 
         _controller.Move(moveDir * (Time.deltaTime * speed));
         anim.SetTrigger(Walking);
