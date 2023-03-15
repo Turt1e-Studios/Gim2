@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class GeneralUI : MonoBehaviour
+public static class GeneralUI
 {
     [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.AfterSceneLoad)]
 
