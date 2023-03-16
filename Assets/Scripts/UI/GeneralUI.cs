@@ -2,10 +2,13 @@ using UnityEngine;
 
 public static class GeneralUI
 {
-    [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.AfterSceneLoad)]
+    public static void EnableCursor()
+    {
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+    }
 
-    // Start is called before the first frame update
-    private static void Start()
+    public static void DisableCursor()
     {
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;

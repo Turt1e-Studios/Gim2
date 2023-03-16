@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -30,6 +31,11 @@ public class PlayerMovement : MonoBehaviour
     private void Awake()
     {
         _controller = GetComponent<CharacterController>();
+    }
+
+    private void Start()
+    {
+        GeneralUI.DisableCursor();
     }
 
     // Update is called once per frame

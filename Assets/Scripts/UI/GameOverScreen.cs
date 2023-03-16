@@ -7,7 +7,7 @@ public class GameOverScreen : MonoBehaviour
 {
     [SerializeField] private GameObject healthBar;
 
-    public void Setup()
+    private void Setup()
     {
         gameObject.SetActive(true);
         healthBar.SetActive(false);
@@ -25,8 +25,7 @@ public class GameOverScreen : MonoBehaviour
     
     public void GameOver()
     {
-        Cursor.lockState = CursorLockMode.None;
-        Cursor.visible = true;
+        GeneralUI.EnableCursor();
         Setup();
     }
 }
