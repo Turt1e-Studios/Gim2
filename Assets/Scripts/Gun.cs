@@ -1,18 +1,17 @@
+using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
-
-/*
- * Gun that shoots
- */
 
 public class Gun : MonoBehaviour
 {
-    
+    // When the enemies are close so the meshes collide with the Player, it gets buggy. Other than that, it seems to be working.
 
     // Starts with a cooldown
-    [SerializeField] private Transform firePoint;
-    [SerializeField] private GameObject bulletPrefab;
-    [SerializeField] private float cooldown;
-    [SerializeField] private float speed = 10;
+    [SerializeField] Transform firePoint;
+    [SerializeField] GameObject bulletPrefab;
+    [SerializeField] float cooldown;
+    [SerializeField] float speed = 10;
     private float lastShot;
     private Player playerScript;
 

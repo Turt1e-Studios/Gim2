@@ -1,14 +1,14 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-// Inventory slot that when interacted with, changes the inventory
-
 public class InventorySlot : MonoBehaviour
 {
-    [SerializeField] private Image icon;
-    [SerializeField] private Button removeButton;
+    [SerializeField] Image icon;
+    [SerializeField] Button removeButton;
 
-    private Item item;
+    Item item;
 
     public void AddItem(Item newItem)
     {
