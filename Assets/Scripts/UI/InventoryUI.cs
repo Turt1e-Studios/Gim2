@@ -1,18 +1,17 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+
+// Updates the slot UI of inventory
 
 public class InventoryUI : MonoBehaviour
 {
-    [SerializeField] Transform itemsParent;
-    [SerializeField] GameObject inventoryUI;
+    [SerializeField] private Transform itemsParent;
+    [SerializeField] private GameObject inventoryUI;
 
-    Inventory inventory;
-
-    InventorySlot[] slots;
+    private Inventory inventory;
+    private InventorySlot[] slots;
 
     // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
         inventory = Inventory.instance;
         inventory.onItemChangedCallback += UpdateUI;
@@ -21,15 +20,22 @@ public class InventoryUI : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        if (Input.GetButtonDown("Inventory"))
+        if (!Input.GetButtonDown("Inventory")) return;
+        
+        if (inventoryUI.activeSelf)
         {
-            inventoryUI.SetActive(!inventoryUI.activeSelf);
+            GeneralUI.DisableCursor();
         }
+        else
+        {
+            GeneralUI.EnableCursor();
+        }
+        inventoryUI.SetActive(!inventoryUI.activeSelf);
     }
 
-    void UpdateUI()
+    private void UpdateUI()
     {
         for (int i = 0; i < slots.Length; i++)
         {

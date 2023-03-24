@@ -1,13 +1,13 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+// Updates the UI of health bar
+
 public class HealthBar : MonoBehaviour
 {
-    [SerializeField] Slider slider;
-    [SerializeField] Gradient gradient;
-    [SerializeField] Image fill;
+    [SerializeField] private Slider slider;
+    [SerializeField] private Gradient gradient;
+    [SerializeField] private Image fill;
 
     public void SetMaxHealth(int health)
     {

@@ -1,16 +1,16 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+
+// Base interactable that player can interact with (pretty bad explanation but i kind of have no idea what this really does)
 
 public class Interactable : MonoBehaviour
 {
-    [SerializeField] float radius = 3f;
+    [SerializeField] private float radius = 3f;
 
-    Transform player;
-    bool hasInteracted = false;
+    private Transform player;
+    private bool hasInteracted;
     // add InteractionTransform? [in Brackeys tutorial]
 
-    public virtual void Interact()
+    protected virtual void Interact()
     {
         // this method is meant to be overwritten
         Debug.Log("Interacting with " + transform.name);
@@ -19,21 +19,19 @@ public class Interactable : MonoBehaviour
     // couldn't think of a better name for this, not a very descriptive method name tbh
     public void Touch (Transform playerTransform)
     {
-        if (!hasInteracted)
-        {
-            player = playerTransform;
-            float distance = Vector3.Distance(player.position, transform.position);
-            if (distance <= radius)
-            {
-                Interact();
-                hasInteracted = true;
-            }
-        }
+        if (hasInteracted) return;
+        player = playerTransform;
+        float distance = Vector3.Distance(player.position, transform.position);
+        
+        if (!(distance <= radius)) return;
+        Interact();
+        hasInteracted = true;
     }
 
-    void OnDrawGizmosSelected()
+    private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.yellow;
         Gizmos.DrawWireSphere(transform.position, radius);
     }
 }
+

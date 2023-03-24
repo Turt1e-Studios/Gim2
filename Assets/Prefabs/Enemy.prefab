@@ -127,6 +127,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf5408e9d4397754aba6aaaabcf19e64, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  deathItem: {fileID: 1558785009062226909, guid: b7ca90e5507b16040a7e5ecf399ee5f6, type: 3}
   maxHealth: 2
   speed: 9
   distanceFromPlayer: 4
