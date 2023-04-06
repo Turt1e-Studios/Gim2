@@ -22,14 +22,14 @@ public class Player : MonoBehaviour
     // Start is called before the first frame update
     private void Start()
     {
-        // make the cursor invisible [actually, this should probably not be in the Player script.]
-        fightingAction = Kick;
+        // Set to either Kick or Shoot while debugging (then change in Gun script)
+        // fightingAction = Kick;
     }
 
     // Update is called once per frame
     private void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && fightingAction == Kick)
         {
             fightingAction?.Invoke();
         }

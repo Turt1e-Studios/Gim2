@@ -6,8 +6,6 @@ using UnityEngine;
 
 public class Gun : MonoBehaviour
 {
-    
-
     // Starts with a cooldown
     [SerializeField] private Transform firePoint;
     [SerializeField] private GameObject bulletPrefab;
@@ -19,17 +17,16 @@ public class Gun : MonoBehaviour
     private void Start()
     {
         playerScript = GameObject.Find("Player").GetComponent<Player>();
+        playerScript.fightingAction = Shoot;
     }
 
     // Update is called once per frame
     private void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && playerScript.fightingAction == Shoot)
         {
-            //Shoot();
+            Shoot();
         }
-
-        // playerScript.fightingAction = Shoot;
     }
 
     private void Shoot()
