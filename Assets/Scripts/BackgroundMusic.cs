@@ -1,16 +1,29 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
-
-/*
- * Set the volume of the background music
- */
 
 public class BackgroundMusic : MonoBehaviour
 {
-    [SerializeField] private AudioSource audioSource;
-    [SerializeField] private float defaultVolume = 0.5f;
-    
+    //public static BackgroundMusic Instance;
+
+    //private void Awake()
+    //{
+    //    // start of new code
+    //    if (Instance != null)
+    //    {
+    //        Destroy(gameObject);
+    //        return;
+    //    }
+    //    // end of new code
+
+    //    Instance = this;
+    //    DontDestroyOnLoad(gameObject);
+    //}
+
+    // loads the volume according to settings
+
     private void Awake()
     {
-        audioSource.volume = PlayerPrefs.GetFloat("Volume", defaultVolume);
+        GetComponent<AudioSource>().volume = Settings.Instance.volume;
     }
 }

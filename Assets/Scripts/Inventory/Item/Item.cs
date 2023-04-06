@@ -1,14 +1,14 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
-
-// An Item that the player can pick up
 
 [CreateAssetMenu(fileName = "New Item", menuName = "Inventory/Item")]
 
 public class Item : ScriptableObject
 {
-    public new string name = "New Item";
-    public Sprite icon;
-    public bool isDefaultItem;
+    new public string name = "New Item";
+    public Sprite icon = null;
+    public bool isDefaultItem = false;
 
     public virtual void Use()
     {

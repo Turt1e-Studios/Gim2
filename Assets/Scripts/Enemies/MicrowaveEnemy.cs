@@ -1,32 +1,32 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
-// The microwave enemy.
 public class MicrowaveEnemy : Enemy
 {
-    [SerializeField] private int speed = 10;
-    private Vector3 _direction;
-    private const float TimeBetweenChanges = 5;
-    private float _lastStop;
+    [SerializeField] int speed = 10;
+    Vector3 direction;
+    float timeBetweenChanges = 5;
+    float lastStop;
 
     // Start is called before the first frame update
-    private void Start()
+    void Start()
     {
         health = maxHealth;
-        _direction = Random.insideUnitSphere;
+        direction = Random.insideUnitSphere;
     }
 
     // Update is called once per frame
-    private void Update()
+    void Update()
     {
-        if (Time.time - _lastStop < TimeBetweenChanges)
+        if (Time.time - lastStop < timeBetweenChanges)
         {
-            transform.Translate(_direction * (Time.deltaTime * speed));
+            transform.Translate(direction * Time.deltaTime * speed);
         }
         else
         {
-            _direction = Random.insideUnitSphere;
-            _lastStop = Time.time;
+            direction = Random.insideUnitSphere;
+            lastStop = Time.time;
         }
     }
 }
-

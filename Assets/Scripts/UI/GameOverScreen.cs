@@ -1,13 +1,11 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-// Controls UI and button function of the Game Over screen
-
 public class GameOverScreen : MonoBehaviour
 {
-    [SerializeField] private GameObject healthBar;
+    [SerializeField] GameObject healthBar;
 
-    private void Setup()
+    public void Setup()
     {
         gameObject.SetActive(true);
         healthBar.SetActive(false);
@@ -21,11 +19,5 @@ public class GameOverScreen : MonoBehaviour
     public void ExitButton()
     {
         SceneManager.LoadScene("MainMenu");
-    }
-    
-    public void GameOver()
-    {
-        GeneralUI.EnableCursor();
-        Setup();
     }
 }

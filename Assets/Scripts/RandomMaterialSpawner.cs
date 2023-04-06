@@ -1,11 +1,10 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
-
-/*
- * Spawn materials
- */
 
 public class RandomMaterialSpawner : MonoBehaviour
 {
+    // not going to mess with this since it isn't working yet
     public GameObject matV1;
    
     public int r;
@@ -29,7 +28,7 @@ public class RandomMaterialSpawner : MonoBehaviour
     }
 
     // Update is called once per frame
-    private void Update()
+    void Update()
     {
       
     }

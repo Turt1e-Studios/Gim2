@@ -31,37 +31,6 @@ Transform:
   m_Father: {fileID: 2335438369057908903}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1829115658
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1829115659}
-  m_Layer: 0
-  m_Name: Ground Check
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1829115659
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1829115658}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 2335438369057908903}
-  m_RootOrder: 6
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &49066658461669576
 GameObject:
   m_ObjectHideFlags: 0
@@ -423,7 +392,6 @@ GameObject:
   - component: {fileID: 2874314365631123271}
   - component: {fileID: 2874314365631123266}
   - component: {fileID: 2874314365631123270}
-  - component: {fileID: 543450652089586016}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -449,7 +417,6 @@ Transform:
   - {fileID: 7234949128815460003}
   - {fileID: 2874314365235667806}
   - {fileID: 787694799}
-  - {fileID: 1829115659}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -484,22 +451,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthBar: {fileID: 0}
-  gameOverScreen: {fileID: 0}
+  GameOverScreen: {fileID: 0}
   item: {fileID: 0}
   cam: {fileID: 0}
-  anim: {fileID: 543450652089586016}
   gravity: -9.8
   maxHealth: 10
   speed: 6
   turnSmoothTime: 0.1
   jumpHeight: 3
-  groundMask:
-    serializedVersion: 2
-    m_Bits: 128
-  groundCheck: {fileID: 1829115659}
-  groundDistance: 0.4
-  kickStrength: 30
-  kickRange: 5
 --- !u!114 &2874314365631123270
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -516,26 +475,6 @@ MonoBehaviour:
   bulletPrefab: {fileID: 4618758204917378040, guid: d8d27031c0eb75f47a28ebfa643e534d, type: 3}
   cooldown: 0.5
   speed: 10
---- !u!95 &543450652089586016
-Animator:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3108315515717939741}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 8de612339c55a4144ad37a00eea56523, type: 2}
-  m_CullingMode: 1
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 1
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &3202057289946955048
 GameObject:
   m_ObjectHideFlags: 0
