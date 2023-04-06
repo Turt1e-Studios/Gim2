@@ -3,30 +3,43 @@ using UnityEngine;
 // The microwave enemy.
 public class MicrowaveEnemy : Enemy
 {
-    [SerializeField] private int speed = 10;
-    private Vector3 _direction;
-    private const float TimeBetweenChanges = 5;
-    private float _lastStop;
+    [SerializeField] private GameObject bulletPrefab;
+    [SerializeField] private float speed = 10f;
+    [SerializeField] private float maxHeight = 10f;
+    [SerializeField] private float secondsPerShot = 3f;
+    [SerializeField] private float bulletSpeed = 20f;
+
+    private GameObject player;
+    private Transform _transform;
+    private bool isShooting;
 
     // Start is called before the first frame update
     private void Start()
     {
         health = maxHealth;
-        _direction = Random.insideUnitSphere;
+        player = GameObject.Find("Player");
+        _transform = transform;
     }
 
     // Update is called once per frame
     private void Update()
     {
-        if (Time.time - _lastStop < TimeBetweenChanges)
+        if (transform.position.y <= maxHeight)
         {
-            transform.Translate(_direction * (Time.deltaTime * speed));
+            transform.Translate(Vector3.up * (speed * Time.deltaTime));
         }
-        else
+        else if (!isShooting)
         {
-            _direction = Random.insideUnitSphere;
-            _lastStop = Time.time;
+            isShooting = true;
+            InvokeRepeating(nameof(Shoot), 0f, secondsPerShot);
         }
+        transform.LookAt(player.transform);
+    }
+
+    private void Shoot()
+    {
+        GameObject bullet = Instantiate(bulletPrefab, _transform.position, _transform.rotation);
+        bullet.GetComponent<Rigidbody>().velocity = transform.forward * bulletSpeed; 
     }
 }
 
