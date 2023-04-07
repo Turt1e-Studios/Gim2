@@ -97,7 +97,7 @@ MonoBehaviour:
   speed: 3
   maxHeight: 10
   secondsPerShot: 3
-  bulletSpeed: 50
+  bulletSpeed: 40
 --- !u!1 &6558574488528805388
 GameObject:
   m_ObjectHideFlags: 0
