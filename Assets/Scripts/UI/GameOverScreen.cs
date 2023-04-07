@@ -6,6 +6,9 @@ using UnityEngine.SceneManagement;
 public class GameOverScreen : MonoBehaviour
 {
     [SerializeField] private GameObject healthBar;
+    [SerializeField] private AudioSource gameOverAudio;
+
+    private bool isGameOver;
 
     private void Setup()
     {
@@ -25,6 +28,13 @@ public class GameOverScreen : MonoBehaviour
     
     public void GameOver()
     {
+        if (isGameOver)
+        {
+            return;
+        }
+        isGameOver = true;
+        
+        gameOverAudio.Play();
         GeneralUI.EnableCursor();
         Setup();
     }

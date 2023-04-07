@@ -6,7 +6,7 @@ public class Settings : MonoBehaviour
     #endregion
     #region Public Variables
 
-    public static float outOfBoundsBox = 100f;
+    public const float OutOfBoundsBox = 100f;
 
     #endregion
     #region Private Variables

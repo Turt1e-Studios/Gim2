@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class PlayerHealth : MonoBehaviour
 {
+    [SerializeField] private AudioSource playerHitSound;
     [SerializeField] private HealthBar healthBar;
     [SerializeField] private GameOverScreen gameOverScreen;
     [SerializeField] private int maxHealth = 10;
@@ -22,6 +23,7 @@ public class PlayerHealth : MonoBehaviour
     // Public method, allows other classes to change the player's health.
     public void ChangeHealth(int change)
     {
+        playerHitSound.Play();
         _health += change;
         healthBar.SetHealth(_health);
         if (_health < 0)

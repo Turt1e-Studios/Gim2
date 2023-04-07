@@ -17,6 +17,8 @@ public class PlayerMovement : MonoBehaviour
     [Header("Movement Animation")]
     [SerializeField] private Transform cam;
     [SerializeField] private Animator anim;
+    [Header("Audio")] 
+    [SerializeField] private AudioSource hitGroundAudio;
     [Header("Ground Check")]
     [SerializeField] private LayerMask groundMask;
     [SerializeField] private Transform groundCheck;
@@ -27,6 +29,7 @@ public class PlayerMovement : MonoBehaviour
     private Vector3 _velocity;
     private float _turnSmoothVelocity;
     private bool _isGrounded;
+    private bool _hasJumped;
 
     private void Awake()
     {
@@ -85,6 +88,7 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetButtonDown("Jump") && _isGrounded)
         {
             _velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
+            _hasJumped = true;
         }
 
         _velocity.y += gravity * Time.deltaTime;
@@ -95,8 +99,11 @@ public class PlayerMovement : MonoBehaviour
     {
         // Check if player is grounded from creating sphere from groundCheck, then reset velocity
         _isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
-        if (_isGrounded && _velocity.y < 0)
+
+        if (_isGrounded && _velocity.y < 0 && _hasJumped)
         {
+            hitGroundAudio.Play();
+            _hasJumped = false;
             _velocity.y = -2f; // Buffer number to force player onto the ground (theoretically 0)
         }
     }
