@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 
 // Just bullet that damages the player I thinK?
@@ -17,20 +16,15 @@ public class Bullet : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (!other.gameObject.CompareTag("Player"))
-        {
-            Debug.Log("why tf isn't this working?????????????? AAAAAAAAAAAAAAAAAAAAAAAAAAA");
-            _audioSource.PlayOneShot(bulletHitSound);
-        }
-        
         // Enemy loses health when colliding with the bullet
         if (other.gameObject.CompareTag("enemy"))
         {
+            _audioSource.PlayOneShot(bulletHitSound);
             other.GetComponent<Enemy>().ChangeHealth(-damage);
         }
         
-        // Destroy the bullet if it collides with something
-        if (!other.gameObject.CompareTag("Player"))
+        // Destroy the bullet if it collides with the environment
+        else if (!other.gameObject.CompareTag("Player") && !other.gameObject.CompareTag("microwave_enemy"))
         {
             Destroy(gameObject);
         }

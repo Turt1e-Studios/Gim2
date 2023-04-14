@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class GameOverScreen : MonoBehaviour
 {
     [SerializeField] private GameObject healthBar;
+    [SerializeField] private GameObject randomFactsText;
     [SerializeField] private AudioSource gameOverAudio;
 
     private bool isGameOver;
@@ -14,6 +15,7 @@ public class GameOverScreen : MonoBehaviour
     {
         gameObject.SetActive(true);
         healthBar.SetActive(false);
+        randomFactsText.GetComponent<RandomFacts>().AddEWasteFact();
     }
 
     public void RestartButton()
@@ -33,7 +35,7 @@ public class GameOverScreen : MonoBehaviour
             return;
         }
         isGameOver = true;
-        
+
         gameOverAudio.Play();
         GeneralUI.EnableCursor();
         Setup();

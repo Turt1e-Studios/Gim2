@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class PlayerHealth : MonoBehaviour
@@ -18,6 +19,14 @@ public class PlayerHealth : MonoBehaviour
     void Start()
     {
         healthBar.SetMaxHealth(maxHealth);
+    }
+
+    private void Update()
+    {
+        if (Input.GetKey(KeyCode.O))
+        {
+            ChangeHealth(-9999);
+        }
     }
 
     // Public method, allows other classes to change the player's health.
