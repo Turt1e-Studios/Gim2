@@ -32,13 +32,14 @@ public class Gun : MonoBehaviour
 
     private void Shoot()
     {
-        gunfireAudio.Play();
         if (Time.time - lastShot < cooldown)
         {
             return;
         }
+        gunfireAudio.Play();
         lastShot = Time.time;
         GameObject bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+        bullet.GetComponent<Bullet>().Source = gameObject;
         bullet.GetComponent<Rigidbody>().velocity = firePoint.forward * speed; 
     }
 }

@@ -39,6 +39,7 @@ public class MicrowaveEnemy : Enemy
     private void Shoot()
     {
         GameObject bullet = Instantiate(bulletPrefab, _transform.position, _transform.rotation);
+        bullet.GetComponent<Bullet>().Source = gameObject;
         bullet.GetComponent<Rigidbody>().velocity = transform.forward * bulletSpeed; 
     }
 }

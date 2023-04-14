@@ -6,6 +6,8 @@ public class Bullet : MonoBehaviour
 {
     [SerializeField] private AudioClip bulletHitSound;
     [SerializeField] private int damage;
+    
+    public GameObject Source { get; set; }
 
     private AudioSource _audioSource;
 
@@ -27,6 +29,11 @@ public class Bullet : MonoBehaviour
         else if (!other.gameObject.CompareTag("Player") && !other.gameObject.CompareTag("microwave_enemy"))
         {
             Destroy(gameObject);
+        }
+        
+        else if (other.gameObject.CompareTag("Player") && Source.gameObject.CompareTag("microwave_enemy"))
+        {
+            GameObject.Find("Player").GetComponent<PlayerHealth>().ChangeHealth(-1);
         }
     }
 
