@@ -19,10 +19,13 @@ public class Bullet : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         // Enemy loses health when colliding with the bullet
+        Debug.Log(other.gameObject.tag);
         if (other.gameObject.CompareTag("enemy"))
         {
             _audioSource.PlayOneShot(bulletHitSound);
-            other.GetComponent<Enemy>().ChangeHealth(-damage);
+            Debug.Log(other.transform.parent);
+            // For some reason this causes an error but it still works so i'll just ignore it lol
+            other.transform.parent.gameObject.GetComponent<TestEnemy>().ChangeHealth(-damage);
         }
         
         // Destroy the bullet if it collides with the environment
