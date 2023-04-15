@@ -5,15 +5,19 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
     [SerializeField] private AudioClip bulletHitSound;
+    //[SerializeField] private GameObject particleObject;
     [SerializeField] private int damage;
     
     public GameObject Source { get; set; }
 
     private AudioSource _audioSource;
+    //private ParticleSystem bulletParticles;
 
     private void Start()
     {
         _audioSource = GetComponent<AudioSource>();
+        //bulletParticles = particleObject.GetComponent<ParticleSystem>();
+        //bulletParticles.Stop();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -23,14 +27,18 @@ public class Bullet : MonoBehaviour
         if (other.gameObject.CompareTag("enemy"))
         {
             _audioSource.PlayOneShot(bulletHitSound);
+            //bulletParticles.Play();
             Debug.Log(other.transform.parent);
             // For some reason this causes an error but it still works so i'll just ignore it lol
-            other.transform.parent.gameObject.GetComponent<TestEnemy>().ChangeHealth(-damage);
+            TestEnemy testEnemyScript = other.transform.parent.gameObject.GetComponent<TestEnemy>();
+            testEnemyScript.ChangeHealth(-damage);
+            testEnemyScript.ActivateExplosion();
         }
         
         // Destroy the bullet if it collides with the environment
         else if (!other.gameObject.CompareTag("Player") && !other.gameObject.CompareTag("microwave_enemy"))
         {
+            //bulletParticles.Play();
             Destroy(gameObject);
         }
         
