@@ -28,14 +28,6 @@ public class TestEnemy : Enemy
         }
     }
 
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject == player)
-        {
-            playerHealthScript.ChangeHealth(-1);
-        }
-    }
-
     private void OnEnable()
     {
         player = GameObject.Find("Player");
