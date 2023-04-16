@@ -7,6 +7,7 @@ using UnityEngine;
 public class Gun : MonoBehaviour
 {
     // Starts with a cooldown
+
     [SerializeField] private AudioSource gunfireAudio;
     [SerializeField] private Transform firePoint;
     [SerializeField] private GameObject bulletPrefab;
@@ -24,13 +25,20 @@ public class Gun : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
-        if (Input.GetMouseButtonDown(0) && playerScript.fightingAction == Shoot)
+        if (Input.GetMouseButtonDown(0))
         {
-            Shoot();
+            // Instantiate the bullet
+            GameObject bullet = Instantiate(bulletPrefab) as GameObject;
+
+            // Set the position of the bullet to the position of the camera
+            bullet.transform.position = Camera.main.transform.position;
+
+            // Set the velocity of the bullet to the direction that the camera is facing
+            Rigidbody rb = bullet.GetComponent<Rigidbody>();
+            rb.velocity = Camera.main.transform.forward* 40; // Change 40 to whatever speed you want the bullet to travel at
         }
     }
-
-    private void Shoot()
+private void Shoot()
     {
         if (Time.time - lastShot < cooldown)
         {

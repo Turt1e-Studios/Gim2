@@ -128,6 +128,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 117ca84af15745a41bcc08e5df1333fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  prefab: {fileID: 4618758204917378040}
   bulletHitSound: {fileID: 8300000, guid: d9fd379e1171d7f44a656d77bd28da95, type: 3}
   damage: 1
 --- !u!82 &-4837475669381179184

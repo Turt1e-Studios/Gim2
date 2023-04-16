@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
+    [SerializeField] GameObject prefab;
     [SerializeField] private AudioClip bulletHitSound;
     //[SerializeField] private GameObject particleObject;
     [SerializeField] private int damage;
-    
+
     public GameObject Source { get; set; }
 
     private AudioSource _audioSource;
@@ -23,7 +24,6 @@ public class Bullet : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         // Enemy loses health when colliding with the bullet
-        Debug.Log(other.gameObject.tag);
         if (other.gameObject.CompareTag("enemy"))
         {
             _audioSource.PlayOneShot(bulletHitSound);
@@ -51,7 +51,7 @@ public class Bullet : MonoBehaviour
     private void Update()
     {
         // Probably could also implement this for x and z directions too. Not sure how to do this while still being performant
-        if (transform.position.y < -Settings.OutOfBoundsBox)
+        if (transform.position.y < -Settings.OutOfBoundsBox || transform.position.x < -Settings.OutOfBoundsBox || transform.position.z < -Settings.OutOfBoundsBox)
         {
             Destroy(gameObject);
         }
