@@ -50,7 +50,12 @@ public class TestEnemy : Enemy
 
     private void OnDisable()
     {
-        playerScript.OnKick -= GetKicked;
+        if (player != null)
+        {
+            playerScript = player.GetComponent<Player>();
+            playerHealthScript = player.GetComponent<PlayerHealth>();
+            playerScript.OnKick -= GetKicked;
+        }
     }
 
     // Apply a force in the opposite direction of the player
@@ -64,7 +69,6 @@ public class TestEnemy : Enemy
 
     public void ActivateExplosion()
     {
-        Debug.Log("This is working :)");
         explosionParticles.Play();
     }
 }
