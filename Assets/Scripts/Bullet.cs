@@ -51,11 +51,10 @@ public class Bullet : MonoBehaviour
         else if (other.gameObject.CompareTag("Player") && Source.gameObject.CompareTag("microwave_enemy"))
         {
             PlayerHealth playerHealth = GameObject.Find("Player")?.GetComponent<PlayerHealth>();
+            if (playerHealth != null)
             {
-                if (playerHealth != null)
-                {
-                    playerHealth.ChangeHealth(-1);
-                }
+                playerHealth.ChangeHealth(-1);
+                Destroy(gameObject);
             }
         }
     }
