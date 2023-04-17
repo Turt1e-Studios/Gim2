@@ -48,7 +48,7 @@ public class Bullet : MonoBehaviour
                 testEnemyScript.ActivateExplosion();
             }
         }
-        else if (other.gameObject.CompareTag("microwave_enemy") && !Source.gameObject.CompareTag("microwave_enemy"))
+        else if (other.gameObject.CompareTag("microwave_enemy") && Source.gameObject.CompareTag("Player"))
         {
             TestEnemy testEnemyScript = other.transform.parent.gameObject.GetComponent<TestEnemy>();
 
@@ -63,7 +63,7 @@ public class Bullet : MonoBehaviour
             Destroy(gameObject);
         }
 
-        else if (Source.gameObject.CompareTag("Player")
+        else if (other.gameObject.CompareTag("Player")
                  && Source.gameObject.CompareTag("microwave_enemy"))
         {
             PlayerHealth playerHealth = GameObject.Find("Player")?.GetComponent<PlayerHealth>();
