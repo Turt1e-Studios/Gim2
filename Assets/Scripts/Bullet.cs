@@ -33,6 +33,21 @@ public class Bullet : MonoBehaviour
                 testEnemyScript.ActivateExplosion();
             }
         }
+        else if (other.gameObject.CompareTag("microwave_enemy"))
+        {
+            _audioSource.PlayOneShot(bulletHitSound);
+            //bulletParticles.Play();
+            Debug.Log(other.transform.parent);
+            Debug.Log("Bullet collided with: " + other.tag);
+            Debug.Log("Bullet collided with: " + other.gameObject.tag);
+            // For some reason this causes an error but it still works so i'll just ignore it lol
+            TestEnemy testEnemyScript = other.transform.parent?.gameObject.GetComponent<TestEnemy>();
+            if (testEnemyScript != null)
+            {
+                testEnemyScript.ChangeHealth(-damage);
+                testEnemyScript.ActivateExplosion();
+            }
+        }
         else if (other.gameObject.CompareTag("microwave_enemy") && !Source.gameObject.CompareTag("microwave_enemy"))
         {
             TestEnemy testEnemyScript = other.transform.parent.gameObject.GetComponent<TestEnemy>();
@@ -48,7 +63,8 @@ public class Bullet : MonoBehaviour
             Destroy(gameObject);
         }
 
-        else if (other.gameObject.CompareTag("Player") && Source.gameObject.CompareTag("microwave_enemy"))
+        else if (Source.gameObject.CompareTag("Player")
+                 && Source.gameObject.CompareTag("microwave_enemy"))
         {
             PlayerHealth playerHealth = GameObject.Find("Player")?.GetComponent<PlayerHealth>();
             if (playerHealth != null)
