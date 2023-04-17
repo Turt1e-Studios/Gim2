@@ -633,7 +633,6 @@ GameObject:
   - component: {fileID: -1666492864211025357}
   - component: {fileID: -8590607501861165779}
   - component: {fileID: -8606607897191203971}
-  - component: {fileID: 454520531347621007}
   m_Layer: 0
   m_Name: Updated_micowave_enemy
   m_TagString: microwave_enemy
@@ -701,7 +700,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fcce4a943023d054ea520aed474bc226, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  deathItem: {fileID: 0}
+  deathItem: {fileID: 3598767422963014885, guid: ef8f2c8fd68c7f0459859219a6d2c8a7, type: 3}
   maxHealth: 1
   bulletPrefab: {fileID: 4618758204917378040, guid: d8d27031c0eb75f47a28ebfa643e534d, type: 3}
   speed: 3
@@ -709,24 +708,6 @@ MonoBehaviour:
   secondsPerShot: 3
   bulletSpeed: 3
   damping: 3
---- !u!114 &454520531347621007
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7690190412596429549}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cf5408e9d4397754aba6aaaabcf19e64, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  deathItem: {fileID: 0}
-  maxHealth: 0
-  speed: 1
-  distanceFromPlayer: 5
-  particleObject: {fileID: 0}
-  explosionObject: {fileID: 0}
 --- !u!1 &8419990580665531791
 GameObject:
   m_ObjectHideFlags: 0
