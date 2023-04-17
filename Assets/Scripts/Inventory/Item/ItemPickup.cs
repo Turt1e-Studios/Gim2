@@ -6,7 +6,7 @@ public class ItemPickup : Interactable
 {
     public Item item;
 
-    protected override void Interact()
+    public override void Interact()
     {
         base.Interact();
 

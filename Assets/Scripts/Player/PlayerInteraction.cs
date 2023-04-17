@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 /*
@@ -12,6 +13,14 @@ public class PlayerInteraction : MonoBehaviour
         if (interactable != null)
         {
             interactable.Touch(transform);
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("mat"))
+        {
+            other.gameObject.GetComponent<ItemPickup>().Interact();
         }
     }
 }

@@ -10,7 +10,7 @@ public class Interactable : MonoBehaviour
     private bool hasInteracted;
     // add InteractionTransform? [in Brackeys tutorial]
 
-    protected virtual void Interact()
+    public virtual void Interact()
     {
         // this method is meant to be overwritten
         Debug.Log("Interacting with " + transform.name);
