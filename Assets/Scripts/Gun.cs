@@ -31,7 +31,7 @@ public class Gun : MonoBehaviour
             GameObject bullet = Instantiate(bulletPrefab) as GameObject;
 
             // Set the position of the bullet to the position of the camera
-            bullet.transform.position = Camera.main.transform.position;
+            bullet.transform.position = firePoint.transform.position;
 
             // Set the velocity of the bullet to the direction that the camera is facing
             Rigidbody rb = bullet.GetComponent<Rigidbody>();
