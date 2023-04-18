@@ -1,39 +1,9 @@
 fileFormatVersion: 2
-guid: ebc2a48ae6a1eec40a23a8258fe2f9fa
+guid: 86d8f24f2ef592843a9b7a1f750abfc4
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: LampEmissive
-    second: {fileID: 2100000, guid: 5524c7caa5d280b45bec4a7f79b18178, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Material.001
-    second: {fileID: 2100000, guid: 5524c7caa5d280b45bec4a7f79b18178, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Material.002
-    second: {fileID: 2100000, guid: 5524c7caa5d280b45bec4a7f79b18178, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Material.003
-    second: {fileID: 2100000, guid: 5524c7caa5d280b45bec4a7f79b18178, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Material.004
-    second: {fileID: 2100000, guid: 5524c7caa5d280b45bec4a7f79b18178, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Material.005
-    second: {fileID: 2100000, guid: 5524c7caa5d280b45bec4a7f79b18178, type: 2}
+  externalObjects: {}
   materials:
     materialImportMode: 2
     materialName: 0
