@@ -63,8 +63,7 @@ public class Bullet : MonoBehaviour
             Destroy(gameObject);
         }
 
-        else if (other.gameObject.CompareTag("Player")
-                 && Source.gameObject.CompareTag("microwave_enemy"))
+        else if (other.gameObject.CompareTag("Player") && Source.gameObject.CompareTag("microwave_enemy"))
         {
             PlayerHealth playerHealth = GameObject.Find("Player")?.GetComponent<PlayerHealth>();
             if (playerHealth != null)

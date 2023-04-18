@@ -165,6 +165,7 @@ MonoBehaviour:
   maxHealth: 2
   speed: 9
   distanceFromPlayer: 4
+  requiresParticles: 1
   particleObject: {fileID: 1956197547661106, guid: f293a2dcc753a4a489fefe7f8f312d69, type: 3}
   explosionObject: {fileID: 3684395067304532385}
 --- !u!65 &-2708287014789535285

@@ -8,6 +8,7 @@ public class TestEnemy : Enemy
     // Note to whoever's editing this code: you don't need to add a health variable here because this class inherits from Enemy which already has health functionality.
     [SerializeField] private int speed = 1;
     [SerializeField] private float distanceFromPlayer = 5f;
+    [SerializeField] private bool requiresParticles;
     [SerializeField] private GameObject particleObject;
     [SerializeField] private GameObject explosionObject;
     private GameObject player;
@@ -21,9 +22,12 @@ public class TestEnemy : Enemy
     {
         health = maxHealth; // have to include this line to set health in any enemy class
         testEnemyRb = GetComponent<Rigidbody>();
-        enemyParticles = particleObject.GetComponent<ParticleSystem>();
-        explosionParticles = explosionObject.GetComponent<ParticleSystem>();
-        explosionParticles.Stop();
+        if (requiresParticles)
+        {
+            enemyParticles = particleObject.GetComponent<ParticleSystem>();
+            explosionParticles = explosionObject.GetComponent<ParticleSystem>();
+            explosionParticles.Stop();
+        }
     }
 
     // Update is called once per frame
@@ -33,8 +37,8 @@ public class TestEnemy : Enemy
         {
             transform.position = Vector3.MoveTowards(transform.position, player.transform.position, speed * Time.deltaTime);
         }
-        enemyParticles.Play();
-        if (!enemyParticles.isPlaying)
+
+        if (requiresParticles)
         {
             enemyParticles.Play();
         }
@@ -69,6 +73,9 @@ public class TestEnemy : Enemy
 
     public void ActivateExplosion()
     {
-        explosionParticles.Play();
+        if (requiresParticles)
+        {
+            explosionParticles.Play();
+        }
     }
 }
