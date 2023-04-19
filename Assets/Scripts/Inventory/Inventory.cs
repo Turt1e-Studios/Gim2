@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 // This class stores Items in an inventory system
 
@@ -52,5 +53,55 @@ public class Inventory : MonoBehaviour
     private void UICallback()
     {
         onItemChangedCallback?.Invoke();
+    }
+
+    public void CheckItems(int level)
+    {
+        if (level == 1)
+        {
+            int count = 0;
+            foreach (Item item in items)
+            {
+                if (item.name == "Metal Filings")
+                {
+                    count++;
+                }
+            }
+
+            if (count >= 5)
+            {
+                NextLevel();
+            }
+        }
+    
+        // circuit core, iron plank
+        if (level == 2)
+        {
+            int metalCount = 0;
+            int plankCount = 0;
+
+            foreach (Item item in items)
+            {
+                if (item.name == "Metal Filings")
+                {
+                    metalCount++;
+                }
+                else if (item.name == "Iron Plank")
+                {
+                    plankCount++;
+                }
+            }
+
+            if (metalCount >= 10 && plankCount >= 5)
+            {
+                NextLevel();
+            }
+        }
+    }
+
+    private void NextLevel()
+    {
+        // Add a check if it isn't the last scene
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 }

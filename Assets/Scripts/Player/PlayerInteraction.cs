@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 /*
  * Allows player to collect objects in inventory upon collision
@@ -22,5 +23,15 @@ public class PlayerInteraction : MonoBehaviour
         {
             other.gameObject.GetComponent<ItemPickup>().Interact();
         }
+        else if (other.gameObject.CompareTag("end"))
+        {
+            CheckIfNextLevel();
+        }
+    }
+
+    // This should definitely not be in this class. I'm too tired to do anything at this point
+    private void CheckIfNextLevel()
+    {
+        Inventory.instance.CheckItems(SceneManager.GetActiveScene().buildIndex);
     }
 }

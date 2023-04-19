@@ -9,6 +9,7 @@ TagManager:
   - mspawn
   - microwave_enemy
   - soundbox
+  - end
   layers:
   - Default
   - TransparentFX
