@@ -97,6 +97,34 @@ public class Inventory : MonoBehaviour
                 NextLevel();
             }
         }
+
+        if (level == 3)
+        {
+            int metalCount = 0;
+            int plankCount = 0;
+            int coreCount = 0;
+
+            foreach (Item item in items)
+            {
+                if (item.name == "Metal Filings")
+                {
+                    metalCount++;
+                }
+                else if (item.name == "Iron Plank")
+                {
+                    plankCount++;
+                }
+                else if (item.name == "Circuit Core")
+                {
+                    coreCount++;
+                }
+            }
+
+            if (metalCount >= 5 && plankCount >= 5 && coreCount >= 5)
+            {
+                NextLevel();
+            }
+        }
     }
 
     private void NextLevel()
