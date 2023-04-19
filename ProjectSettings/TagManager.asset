@@ -8,6 +8,7 @@ TagManager:
   - mat
   - mspawn
   - microwave_enemy
+  - soundbox
   layers:
   - Default
   - TransparentFX

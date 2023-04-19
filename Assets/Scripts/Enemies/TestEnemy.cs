@@ -28,6 +28,10 @@ public class TestEnemy : Enemy
             explosionParticles = explosionObject.GetComponent<ParticleSystem>();
             explosionParticles.Stop();
         }
+        else
+        {
+            speed = UnityEngine.Random.Range(0, 10);
+        }
     }
 
     // Update is called once per frame
@@ -36,6 +40,10 @@ public class TestEnemy : Enemy
         if (Vector3.Distance(transform.position, player.transform.position) > distanceFromPlayer)
         {
             transform.position = Vector3.MoveTowards(transform.position, player.transform.position, speed * Time.deltaTime);
+            if (!requiresParticles)
+            {
+                
+            }
         }
 
         if (requiresParticles)

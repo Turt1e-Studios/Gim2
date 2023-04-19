@@ -12,7 +12,7 @@ public class Enemy : MonoBehaviour
     protected virtual void OnDeath()
     {
         var transform1 = transform;
-        Instantiate(deathItem, transform1.position, transform1.rotation);
+        Instantiate(deathItem, transform1.position + new Vector3(0, 1, 0), transform1.rotation);
         Destroy(gameObject);
     }
 

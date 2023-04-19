@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 3387140710480225833}
   m_Layer: 0
   m_Name: Soundbox_enemy
-  m_TagString: enemy
+  m_TagString: soundbox
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -52,7 +52,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 80
   m_CollisionDetection: 0
 --- !u!65 &-8866789153957223297
 BoxCollider:
@@ -80,9 +80,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   deathItem: {fileID: 7771026142633561674, guid: 9420dfef9d5536c44af181742e3bd04a, type: 3}
-  maxHealth: 5
+  maxHealth: 3
   speed: 1
   distanceFromPlayer: 0
+  requiresParticles: 0
   particleObject: {fileID: 0}
   explosionObject: {fileID: 0}
 --- !u!1 &1395824179711575676

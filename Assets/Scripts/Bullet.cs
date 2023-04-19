@@ -27,6 +27,19 @@ public class Bullet : MonoBehaviour
             return;
         }
         
+        // Enemy loses health when colliding with the bullet
+        if (other.gameObject.CompareTag("soundbox"))
+        {
+            _audioSource.PlayOneShot(bulletHitSound);
+            TestEnemy testEnemyScript = other.transform.gameObject.GetComponent<TestEnemy>();
+            if (testEnemyScript != null)
+            {
+                testEnemyScript.ChangeHealth(-damage);
+                testEnemyScript.ActivateExplosion();
+            }
+            return;
+        }
+
         if (other.CompareTag("microwave_enemy"))
         {
             _audioSource.PlayOneShot(bulletHitSound);
