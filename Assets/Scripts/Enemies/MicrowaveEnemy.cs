@@ -4,6 +4,7 @@ using UnityEngine;
 public class MicrowaveEnemy : Enemy
 {
     [SerializeField] private GameObject bulletPrefab;
+    [SerializeField] private GameObject explosionObject;
     [SerializeField] private float speed = 10f;
     [SerializeField] private float maxHeight = 10f;
     [SerializeField] private float secondsPerShot = 3f;
@@ -11,6 +12,7 @@ public class MicrowaveEnemy : Enemy
     [SerializeField] private float damping = 1f;
 
     private GameObject player;
+    private ParticleSystem explosionParticles;
     private Transform _transform;
     private bool isShooting;
 
@@ -20,6 +22,8 @@ public class MicrowaveEnemy : Enemy
         health = maxHealth;
         player = GameObject.Find("Player");
         _transform = transform;
+        explosionParticles = explosionObject.GetComponent<ParticleSystem>();
+        explosionParticles.Stop();
     }
 
     // Update is called once per frame
@@ -47,8 +51,14 @@ public class MicrowaveEnemy : Enemy
     private void Shoot()
     {
         GameObject bullet = Instantiate(bulletPrefab, _transform.position, _transform.rotation);
-        bullet.GetComponent<Bullet>().Source = gameObject;
+        //bullet.GetComponent<Bullet>().Source = gameObject;
         bullet.GetComponent<Rigidbody>().velocity = (player.transform.position - transform.position) * bulletSpeed; 
+    }
+    
+    public void ActivateExplosion()
+    {
+        Debug.Log("Explosion working");
+        explosionParticles.Play();
     }
 }
 

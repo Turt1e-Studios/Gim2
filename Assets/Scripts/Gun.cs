@@ -47,7 +47,7 @@ private void Shoot()
         gunfireAudio.Play();
         lastShot = Time.time;
         GameObject bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
-        bullet.GetComponent<Bullet>().Source = gameObject;
+        //bullet.GetComponent<Bullet>().Source = gameObject;
         bullet.GetComponent<Rigidbody>().velocity = firePoint.forward * speed; 
     }
 }

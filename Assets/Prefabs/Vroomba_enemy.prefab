@@ -162,7 +162,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   deathItem: {fileID: 2942131833147853922, guid: 3785c00357d26e1478bc67e986e6cb93, type: 3}
-  maxHealth: 2
+  maxHealth: 1
   speed: 9
   distanceFromPlayer: 4
   requiresParticles: 1
